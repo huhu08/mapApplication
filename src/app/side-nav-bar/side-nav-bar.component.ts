@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 
 @Component({
-  selector: 'app-side-nav-bar',
+  selector: 'side-nav-bar',
   templateUrl: './side-nav-bar.component.html',
   styleUrls: ['./side-nav-bar.component.css']
 })
