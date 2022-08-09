@@ -5,3 +5,15 @@
     /* position: absolute; top: 0; bottom: 0; width: 100%; */
 
 }
+.mapbox-marker {
+    height: 20px;
+    width: 20px;
+    z-index: 5;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #305bad;
+}
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }

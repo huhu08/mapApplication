@@ -20,29 +20,57 @@ export class MapComponent implements OnInit {
     (mapboxgl as any).accessToken = environment.mapboxkey;
     this.map = new mapboxgl.Map({
     container: 'mapbox-map', // container ID
-    style: 'https://api.maptiler.com/maps/openstreetmap/style.json?key=Xxyh4InI4X6dijTefWMP', // style URL
-    center: [2.86559, 22.80535], // starting position
-    zoom: 0.74 // starting zoom
+    style: 'https://api.maptiler.com/maps/eef16200-c4cc-4285-9370-c71ca24bb42d/style.json?key=CH1cYDfxBV9ZBu1lHGqh', // style URL
+    center: [21.81095, -42.68262], // starting position
+    zoom: 1.38 // starting zoom
     
     });
     
    this.map.addControl(new mapboxgl.NavigationControl());
-   this.createPin(-74.5,40);
+    this.createPin(-74.5,40);
+
   
   }
 
   createPin(lng:number,lat:number){
-      
+    
       const  marker = new mapboxgl.Marker({
         color: "#000000",
         draggable: true
       }).setLngLat([lng,lat])
         .addTo(this.map);
-        marker.on('drag',()=>{
+       
+//.setText('marker.getLngLat()')
+        marker.on('click',()=>{
+          new mapboxgl.Popup()
+          .setLngLat([lng,lat])
+          .addTo(this.map);
           console.log(marker.getLngLat());
         })
+
+        // Add a circle layer with a vector source
+          this.map.addLayer({
+            id: 'points-of-interest',
+            source: {
+                type: 'vector',
+                url: 'https://api.maptiler.com/data/65427794-100e-425d-b631-2ff9ca13687b/features.json?key=CH1cYDfxBV9ZBu1lHGqh'
+            },
+            'source-layer': 'poi_label',
+            type: 'circle',
+            paint: {
+            // Mapbox Style Specification paint properties
+            },
+            layout: {
+            // Mapbox Style Specification layout properties
+            }
+          });
+//         const popup = new mapboxgl.Popup({ closeOnClick: false })
+// .setLngLat([-96, 37.8])
+// .setHTML('<h1>Hello World!</h1>')
+// .addTo(this.map);
   
-  // }
+  }
+  
   // this.map.on('click', (e) => {
   //   var coords = `lat: ${e.lngLat.lat}  lng: ${e.lngLat.lng}`;
 
@@ -59,4 +87,5 @@ export class MapComponent implements OnInit {
   //       .setPopup(popup)
   //       .addTo(this.map);
   // });
-}}
+  }
+
