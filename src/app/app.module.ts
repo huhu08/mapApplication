@@ -5,17 +5,22 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    SideNavBarComponent,
-    
+    SideNavBarComponent
   ],
   imports: [
     BrowserModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   
   ],
   providers: [],
