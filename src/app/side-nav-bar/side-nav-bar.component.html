@@ -1,15 +1,39 @@
-<!-- <mat-sidenav-container>
-    <mat-sidenav>Start</mat-sidenav>
-    <mat-sidenav position="end">End</mat-sidenav>
-    <section>Main</section>
-  </mat-sidenav-container>
-   -->
    <mat-sidenav-container class="example-container" >
-    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-    <mat-sidenav-content>
-      
-      <app-map></app-map>
+    <mat-sidenav mode="side" opened>
+      <div *ngFor="let pin of pinList">
+        <h3>pinID</h3><span>{{pin.floorplanID}}</span>
+        <h3>price</h3><span>{{pin.price}}</span>
+      </div>
+     <mat-sidenav-content>
+      <!-- <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Load Pins</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Replace pin on map dynamically</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Zoom to</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Auto Zoom to show all pins</span>
+        </button>
+      </mat-menu> --> 
+      <div *ngFor="let pin of pinList">
+        <h3>pinID</h3><span>{{pin.floorplanID}}</span>
+        <h3>price</h3><span>{{pin.price}}</span>
+      </div>
     </mat-sidenav-content>
+  </mat-sidenav>
+    
+  <div *ngFor="let pin of pinList">
+    <h3>pinID</h3><span>{{pin.floorplanID}}</span>
+    <h3>price</h3><span>{{pin.price}}</span>
+  </div>
   </mat-sidenav-container>
 
   
