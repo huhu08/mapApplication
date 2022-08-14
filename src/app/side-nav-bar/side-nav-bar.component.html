@@ -1,10 +1,10 @@
-   <mat-sidenav-container class="example-container" >
+   <!-- <mat-sidenav-container class="example-container" >
     <mat-sidenav mode="side" opened>
       <div *ngFor="let pin of pinList">
         <h3>pinID</h3><span>{{pin.floorplanID}}</span>
         <h3>price</h3><span>{{pin.price}}</span>
       </div>
-     <mat-sidenav-content>
+     <mat-sidenav-content> -->
       <!-- <mat-menu #menu="matMenu">
         <button mat-menu-item>
           <mat-icon>dialpad</mat-icon>
@@ -23,17 +23,25 @@
           <span>Auto Zoom to show all pins</span>
         </button>
       </mat-menu> --> 
-      <div *ngFor="let pin of pinList">
+      <!-- <div *ngFor="let pin of pinList">
         <h3>pinID</h3><span>{{pin.floorplanID}}</span>
         <h3>price</h3><span>{{pin.price}}</span>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav>
+      </div> -->
+    <!-- </mat-sidenav-content>
+  </mat-sidenav> -->
     
-  <div *ngFor="let pin of pinList">
-    <h3>pinID</h3><span>{{pin.floorplanID}}</span>
-    <h3>price</h3><span>{{pin.price}}</span>
-  </div>
-  </mat-sidenav-container>
-
   
+  <!-- </mat-sidenav-container> -->
+  <div class="example-container">
+  <div  *ngFor="let pin of pins">
+    <button  > {{pin.getName()}}  -   <button (click)="routeToPinMap(pin.longitude,pin.latitude)">{{pin.getGoeCode()}}
+    </button >
+    </button >
+  <br/>
+
+  <br/>
+      </div>
+      <!-- <ul>
+        <li *ngFor="let pin of pinList">{{pinList.records.object}}</li>
+    </ul> -->
+    </div>

@@ -10,12 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SinglePinMapComponent } from './single-pin-map/single-pin-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    SideNavBarComponent
+    SideNavBarComponent,
+    SinglePinMapComponent
   ],
   imports: [
     BrowserModule,
