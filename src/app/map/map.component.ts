@@ -10,7 +10,7 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class MapComponent implements OnInit {
   //map: Map;
-  map: mapboxgl.Map;
+  map: mapboxgl.Map ;
   constructor() { }
 
   

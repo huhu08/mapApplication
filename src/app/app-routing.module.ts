@@ -5,7 +5,7 @@ import { SinglePinMapComponent } from './single-pin-map/single-pin-map.component
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
-  { path: '', component: MapComponent },
+  { path: 'map', component: MapComponent },
   { path: 'side-nav-bar', component: SideNavBarComponent },
   
   { path: 'pin-Map', component: SinglePinMapComponent},
