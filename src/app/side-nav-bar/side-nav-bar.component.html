@@ -34,7 +34,7 @@
   <!-- </mat-sidenav-container> -->
   <div class="example-container">
   <div  *ngFor="let pin of pins">
-    <button  > {{pin.getName()}}  -   <button (click)="routeToPinMap(pin.longitude,pin.latitude)">{{pin.getGoeCode()}}
+    <button  > {{pin.getName()}}  -   <button (click)="routeToPinMap(pin.name,pin.longitude,pin.latitude)">{{pin.getGoeCode()}}
     </button >
     </button >
   <br/>

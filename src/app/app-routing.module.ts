@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'side-nav-bar', component: SideNavBarComponent },
   
-  { path: 'pin-Map', component: SinglePinMapComponent},
-  { path: 'pin-Map/:longitude/:latitude', component: SinglePinMapComponent}
+  { path: 'pin-Map/:longitude/:latitude', component: SinglePinMapComponent},
+  { path: 'pin-Map/:name/:longitude/:latitude', component: SinglePinMapComponent}
 ];
 
 @NgModule({

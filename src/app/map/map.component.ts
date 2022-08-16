@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as mapboxgl from 'mapbox-gl';
+import { Router, ActivatedRoute, Params,Navigation, Route} from '@angular/router';
+
 //import { pipeline } from 'stream';
 
 @Component({
@@ -11,7 +13,7 @@ import * as mapboxgl from 'mapbox-gl';
 export class MapComponent implements OnInit {
   //map: Map;
   map: mapboxgl.Map ;
-  constructor() { }
+  constructor(public route:Router) { }
 
   
 
@@ -22,9 +24,10 @@ export class MapComponent implements OnInit {
     container: 'mapbox-map', // container ID
     style: 'https://api.maptiler.com/maps/eef16200-c4cc-4285-9370-c71ca24bb42d/style.json?key=CH1cYDfxBV9ZBu1lHGqh', // style URL
     center: [-95.601961, 29.68039], // starting position
-    zoom: 10.38 // starting zoom
+    zoom: 11.38 // starting zoom
     
     });
+
     
    this.map.addControl(new mapboxgl.NavigationControl());
     // this.createPin(-97.360138,32.697651);
@@ -36,22 +39,26 @@ export class MapComponent implements OnInit {
 
   
   }
+  routeToPinMap(longitude: number,latitude:number) {
+    this.route.navigate(['/pin-Map/' ,longitude,latitude]);
+  }
 
   createPin(lng:number,lat:number){
-    //const lngLat = popup.getLngLat();
       const  marker = new mapboxgl.Marker({
         color: "#000000",
-        draggable: true
+        draggable: true,
+        clickTolerance:1
       }).setLngLat([lng,lat])
-     // .setPopup(new mapboxgl.Popup().setText('pins'))
         .addTo(this.map);
         
 
         marker.on('click',()=>{
+          
           new mapboxgl.Popup()
           .setLngLat([lng,lat])
           .addTo(this.map);
           console.log(marker.getLngLat());
+          this.routeToPinMap(lng,lat);
         })
   
   }

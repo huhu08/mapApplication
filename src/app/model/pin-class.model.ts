@@ -1,7 +1,7 @@
 export class PinClass {
 private listId:number;
 private propertyId:number;
-private name:string;
+public name:string;
 public longitude:number;
 public latitude:number;
 

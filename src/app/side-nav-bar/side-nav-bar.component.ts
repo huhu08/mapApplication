@@ -28,8 +28,8 @@ export class SideNavBarComponent implements OnInit {
       new PinClass(5638557,70737,'Plaza Azul',-95.601961,29.68039),
     
     ]
-    routeToPinMap(longitude: number,latitude:number) {
-    this.route.navigate(['/pin-Map/' +'longitude','latitude']);
+    routeToPinMap(name:string,longitude: number,latitude:number) {
+    this.route.navigate(['/pin-Map/' ,name,longitude,latitude]);
   }
 
   }
