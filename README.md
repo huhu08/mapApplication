@@ -1,4 +1,4 @@
-An application that uses mapbox api to create and display current available apartments for rent 
+This is an application that uses mapbox api to create and display current available apartments for rent 
 
 # MapApplication
 
